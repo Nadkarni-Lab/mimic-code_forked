@@ -146,7 +146,7 @@ with t1 as
       when lower(drug) like '%zyvox%' then 1
     else 0
     end as antibiotic
-  from `physionet-data.mimiciii_clinical.prescriptions`
+  from `prescriptions`
   where drug_type in ('MAIN','ADDITIVE')
   -- we exclude routes via the eye, ears, or topically
   and route not in ('OU','OS','OD','AU','AS','AD', 'TP')
