@@ -7,7 +7,7 @@ WITH uo AS (
             when oe.itemid = 227488 then -1*value
         else oe.value 
         end as urineoutput
-    from `outputevents` oe
+    from `physionet-data.mimiciii_clinical.outputevents` oe
     where oe.itemid in
     (
       -- these are the most frequently occurring urine output observations in CareVue
