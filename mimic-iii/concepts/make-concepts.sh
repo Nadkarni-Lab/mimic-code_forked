@@ -1,3 +1,5 @@
+### PJ April 2023 - shouldve run this first.. next time will ensure this runs first.. will need to make a few changes in the liftovermimiciv_ concept files I created. The concepts need to be moved int othe mimic_derived folder. and then from there move to specific folders.
+
 # set the project
 # gcloud config set project physionet-data
 

@@ -191,7 +191,7 @@ COMMENT ON COLUMN CHARTEVENTS.VALUE is
 COMMENT ON COLUMN CHARTEVENTS.VALUENUM is
    'Value of the event as a number.';
 COMMENT ON COLUMN CHARTEVENTS.VALUEUOM is
-   'Unit of measurement.';
+   'Unit of liftovermimiciv_measurement.';
 COMMENT ON COLUMN CHARTEVENTS.WARNING is
    'Flag to highlight that the value has triggered a warning.';
 COMMENT ON COLUMN CHARTEVENTS.ERROR is
@@ -379,7 +379,7 @@ COMMENT ON COLUMN DATETIMEEVENTS.CGID is
 COMMENT ON COLUMN DATETIMEEVENTS.VALUE is
    'Value of the event as a text string.';
 COMMENT ON COLUMN DATETIMEEVENTS.VALUEUOM is
-   'Unit of measurement.';
+   'Unit of liftovermimiciv_measurement.';
 COMMENT ON COLUMN DATETIMEEVENTS.WARNING is
    'Flag to highlight that the value has triggered a warning.';
 COMMENT ON COLUMN DATETIMEEVENTS.ERROR is
@@ -493,11 +493,11 @@ COMMENT ON COLUMN INPUTEVENTS_CV.ITEMID is
 COMMENT ON COLUMN INPUTEVENTS_CV.AMOUNT is
    'Amount of the item administered to the patient.';
 COMMENT ON COLUMN INPUTEVENTS_CV.AMOUNTUOM is
-   'Unit of measurement for the amount.';
+   'Unit of liftovermimiciv_measurement for the amount.';
 COMMENT ON COLUMN INPUTEVENTS_CV.RATE is
    'Rate at which the item is being administered to the patient.';
 COMMENT ON COLUMN INPUTEVENTS_CV.RATEUOM is
-   'Unit of measurement for the rate.';
+   'Unit of liftovermimiciv_measurement for the rate.';
 COMMENT ON COLUMN INPUTEVENTS_CV.STORETIME is
    'Time when the event was recorded in the system.';
 COMMENT ON COLUMN INPUTEVENTS_CV.CGID is
@@ -513,13 +513,13 @@ COMMENT ON COLUMN INPUTEVENTS_CV.NEWBOTTLE is
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALAMOUNT is
    'Amount of the item which was originally charted.';
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALAMOUNTUOM is
-   'Unit of measurement for the original amount.';
+   'Unit of liftovermimiciv_measurement for the original amount.';
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALROUTE is
    'Route of administration originally chosen for the item.';
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALRATE is
    'Rate of administration originally chosen for the item.';
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALRATEUOM is
-   'Unit of measurement for the rate originally chosen.';
+   'Unit of liftovermimiciv_measurement for the rate originally chosen.';
 COMMENT ON COLUMN INPUTEVENTS_CV.ORIGINALSITE is
    'Anatomical site for the original administration of the item.';
 
@@ -549,11 +549,11 @@ COMMENT ON COLUMN INPUTEVENTS_MV.ITEMID is
 COMMENT ON COLUMN INPUTEVENTS_MV.AMOUNT is
   'Amount of the item administered to the patient.';
 COMMENT ON COLUMN INPUTEVENTS_MV.AMOUNTUOM is
-  'Unit of measurement for the amount.';
+  'Unit of liftovermimiciv_measurement for the amount.';
 COMMENT ON COLUMN INPUTEVENTS_MV.RATE is
   'Rate at which the item is being administered to the patient.';
 COMMENT ON COLUMN INPUTEVENTS_MV.RATEUOM is
-  'Unit of measurement for the rate.';
+  'Unit of liftovermimiciv_measurement for the rate.';
 COMMENT ON COLUMN INPUTEVENTS_MV.STORETIME is
   'Time when the event was recorded in the system.';
 COMMENT ON COLUMN INPUTEVENTS_MV.CGID is
@@ -575,7 +575,7 @@ COMMENT ON COLUMN INPUTEVENTS_MV.PATIENTWEIGHT is
 COMMENT ON COLUMN INPUTEVENTS_MV.TOTALAMOUNT is
   'The total amount in the solution for the given item.';
 COMMENT ON COLUMN INPUTEVENTS_MV.TOTALAMOUNTUOM is
-  'Unit of measurement for the total amount in the solution.';
+  'Unit of liftovermimiciv_measurement for the total amount in the solution.';
 COMMENT ON COLUMN INPUTEVENTS_MV.ISOPENBAG is
   'Indicates whether the bag containing the solution is open.';
 COMMENT ON COLUMN INPUTEVENTS_MV.CONTINUEINNEXTDEPT is
@@ -619,7 +619,7 @@ COMMENT ON COLUMN LABEVENTS.VALUE is
 COMMENT ON COLUMN LABEVENTS.VALUENUM is
    'Value of the event as a number.';
 COMMENT ON COLUMN LABEVENTS.VALUEUOM is
-   'Unit of measurement.';
+   'Unit of liftovermimiciv_measurement.';
 COMMENT ON COLUMN LABEVENTS.FLAG is
    'Flag indicating whether the lab test value is considered abnormal (null if the test was normal).';
 
@@ -719,7 +719,7 @@ COMMENT ON COLUMN OUTPUTEVENTS.ITEMID is
 COMMENT ON COLUMN OUTPUTEVENTS.VALUE is
   'Value of the event as a float.';
 COMMENT ON COLUMN OUTPUTEVENTS.VALUEUOM is
-  'Unit of measurement.';
+  'Unit of liftovermimiciv_measurement.';
 COMMENT ON COLUMN OUTPUTEVENTS.STORETIME is
   'Time when the event was recorded in the system.';
 COMMENT ON COLUMN OUTPUTEVENTS.CGID is
@@ -729,7 +729,7 @@ COMMENT ON COLUMN OUTPUTEVENTS.STOPPED is
 COMMENT ON COLUMN OUTPUTEVENTS.NEWBOTTLE is
   'Not applicable to outputs - column always null.';
 COMMENT ON COLUMN OUTPUTEVENTS.ISERROR is
-  'Flag to highlight an error with the measurement.';
+  'Flag to highlight an error with the liftovermimiciv_measurement.';
 
 ------------
 --PATIENTS--
@@ -805,11 +805,11 @@ COMMENT ON COLUMN PRESCRIPTIONS.PROD_STRENGTH is
 COMMENT ON COLUMN PRESCRIPTIONS.DOSE_VAL_RX is
    'Dose of the drug prescribed.';
 COMMENT ON COLUMN PRESCRIPTIONS.DOSE_UNIT_RX is
-   'Unit of measurement associated with the dose.';
+   'Unit of liftovermimiciv_measurement associated with the dose.';
 COMMENT ON COLUMN PRESCRIPTIONS.FORM_VAL_DISP is
    'Amount of the formulation dispensed.';
 COMMENT ON COLUMN PRESCRIPTIONS.FORM_UNIT_DISP is
-   'Unit of measurement associated with the formulation.';
+   'Unit of liftovermimiciv_measurement associated with the formulation.';
 COMMENT ON COLUMN PRESCRIPTIONS.ROUTE is
    'Route of administration, for example intravenous or oral.';
 

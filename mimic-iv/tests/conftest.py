@@ -40,7 +40,7 @@ def concept_folders():
     """
     Returns the folders containing concepts.
     """
-    return ['comorbidity', 'demographics', 'measurement', 'medication', 'organfailure', 'treatment', 'score', 'sepsis', 'firstday']
+    return ['comorbidity', 'demographics', 'liftovermimiciv_measurement', 'liftovermimiciv_medication', 'organfailure', 'treatment', 'score', 'sepsis', 'firstday']
 
 @pytest.fixture(scope="session")
 def concepts(concept_folders):

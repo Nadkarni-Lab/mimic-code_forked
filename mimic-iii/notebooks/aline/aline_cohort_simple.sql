@@ -17,7 +17,7 @@
 
 -- get start time of arterial line
 -- Definition of arterial line insertion:
---  First measurement of invasive blood pressure
+--  First liftovermimiciv_measurement of invasive blood pressure
 with a as
 (
   select icustay_id

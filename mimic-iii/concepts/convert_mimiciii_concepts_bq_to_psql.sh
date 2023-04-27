@@ -22,7 +22,8 @@ export REGEX_SECONDS="s/SECOND\)/\'SECOND\'\)/g"
 
 # tables we want to run before all other concepts
 # usually because they are used as dependencies
-DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.icustay_hours .echo_data .code_status .rrt durations.weight_durations fluid_balance.urine_output organfailure.kdigo_uo'
+#DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.icustay_hours .echo_data .code_status .rrt durations.weight_durations fluid_balance.urine_output organfailure.kdigo_uo'
+DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.liftovermimiciv_icustay_times demographics.icustay_hours demographics.liftovermimiciv_icustay_hourly .echo_data .code_status .rrt durations.weight_durations demographics.liftovermimiciv_weight_durations fluid_balance.urine_output fluid_balance.liftovermimiciv_urine_output organfailure.kdigo_uo'
 
 # tables which are written directly in postgresql and source code controlled
 # this is usually because there is no trivial conversion between bq/psql syntax
@@ -30,7 +31,7 @@ DIR_AND_TABLES_ALREADY_IN_PSQL='demographics.icustay_times demographics.icustay_
 
 # tables which we want to run after all other concepts
 # usually because they depend on one or more other queries
-DIR_AND_TABLES_TO_SKIP=''
+DIR_AND_TABLES_TO_SKIP='sepsis.liftovermimiciv_sepsis3 sepsis.liftovermimiciv_suspicion_of_infection'
 
 # First, we re-create the postgres-make-concepts.sql file.
 echo "\echo ''" > $TARGET_PATH/postgres-make-concepts.sql
@@ -89,11 +90,11 @@ echo " done!"
 # (2) output to the postgres subfolder
 # (3) add a line to the postgres-make-concepts.sql script to generate this table
 
-#  organfailure.kdigo_stages firstday.first_day_sofa sepsis.sepsis3 medication.vasoactive_agent medication.norepinephrine_equivalent_dose
+#  organfailure.kdigo_stages firstday.first_day_sofa sepsis.sepsis3 liftovermimiciv_medication.vasoactive_agent liftovermimiciv_medication.norepinephrine_equivalent_dose
 
 # the order *only* matters during the conversion step because our loop is
 # inserting table build commands into the postgres-make-concepts.sql file
-for d in durations comorbidity demographics firstday fluid_balance sepsis diagnosis organfailure severityscores;
+for d in durations comorbidity demographics firstday fluid_balance liftovermimiciv_measurement liftovermimiciv_medication liftovermimiciv_treatment diagnosis organfailure severityscores sepsis;
 do
     mkdir -p "$TARGET_PATH/${d}"
     echo -n "${d}:"

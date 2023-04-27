@@ -158,7 +158,7 @@ WITH wt_neonate AS
     , starttime
     , coalesce(endtime,
       LEAD(starttime) OVER (partition by icustay_id order by starttime),
-      -- impute ICU discharge as the end of the final weight measurement
+      -- impute ICU discharge as the end of the final weight liftovermimiciv_measurement
       -- plus a 2 hour "fuzziness" window
       DATETIME_ADD(outtime, INTERVAL '2' HOUR)
     ) as endtime

@@ -70,7 +70,7 @@ select
 , ROUND(CAST((ur.urineoutput_6hr/wd.weight/uo_tm_6hr) AS NUMERIC), 4) AS uo_rt_6hr
 , ROUND(CAST((ur.urineoutput_12hr/wd.weight/uo_tm_12hr) AS NUMERIC), 4) AS uo_rt_12hr
 , ROUND(CAST((ur.urineoutput_24hr/wd.weight/uo_tm_24hr) AS NUMERIC), 4) AS uo_rt_24hr
--- time of earliest UO measurement that was used to calculate the rate
+-- time of earliest UO liftovermimiciv_measurement that was used to calculate the rate
 , uo_tm_6hr
 , uo_tm_12hr
 , uo_tm_24hr

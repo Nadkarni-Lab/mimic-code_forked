@@ -17,7 +17,7 @@ WITH tm AS (
     GROUP BY ie.stay_id
 )
 
--- now calculate time since last UO measurement
+-- now calculate time since last UO liftovermimiciv_measurement
 , uo_tm AS (
     SELECT tm.stay_id
         , CASE
@@ -102,7 +102,7 @@ SELECT
                 , 4
             )
     END AS uo_mlkghr_24hr
-    -- time of earliest UO measurement that was used to calculate the rate
+    -- time of earliest UO liftovermimiciv_measurement that was used to calculate the rate
     , ROUND(CAST(uo_tm_6hr AS NUMERIC), 2) AS uo_tm_6hr
     , ROUND(CAST(uo_tm_12hr AS NUMERIC), 2) AS uo_tm_12hr
     , ROUND(CAST(uo_tm_24hr AS NUMERIC), 2) AS uo_tm_24hr

@@ -133,8 +133,8 @@ severityscores | [sapsii](severityscores/sapsii.sql)                            
 severityscores | [sirs](severityscores/sirs.sql)                                            | The Systemic Inflammation Response Score (SIRS).
 severityscores | [sofa](severityscores/sofa.sql)                                            | The Sequential Organ Failure Assessment (SOFA) scale.
 **treatment** | | Tables associated with treatment of a patient.
-treatment | [abx_prescriptions_list](treatment/abx_prescriptions_list.sql)                  | A list of antibiotics mentioned in the prescriptions table.
-treatment | [suspicion_of_infection](treatment/suspicion_of_infection.sql)                  | Suspicion of infection as defined by antibiotic use near the ordering of blood cultures.
+treatment | [abx_prescriptions_list](liftovermimiciv_treatment/abx_prescriptions_list.sql)                  | A list of antibiotics mentioned in the prescriptions table.
+treatment | [suspicion_of_infection](liftovermimiciv_treatment/suspicion_of_infection.sql)                  | Suspicion of infection as defined by antibiotic use near the ordering of blood cultures.
 
 ## Other scripts present
 

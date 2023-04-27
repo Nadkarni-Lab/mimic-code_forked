@@ -73,7 +73,7 @@ WITH wt_stg AS (
             , LEAD(
                 starttime
             ) OVER (PARTITION BY stay_id ORDER BY starttime)
-            -- impute ICU discharge as the end of the final weight measurement
+            -- impute ICU discharge as the end of the final weight liftovermimiciv_measurement
             -- plus a 2 hour "fuzziness" window
             , DATETIME_ADD(outtime, INTERVAL '2' HOUR)
         ) AS endtime

@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS meld; CREATE TABLE meld AS
 --          + 1.120 x ln(INR) 
 --          + 0.643 x etiology
 --      (0 if cholestatic or alcoholic, 1 otherwise)
---  3. adjust the serum sodium using the corresponding glucose measurement
+--  3. adjust the serum sodium using the corresponding glucose liftovermimiciv_measurement
 --      Measured sodium + 0.024 * (Serum glucose - 100)   (Hiller, 1999)
 WITH cohort AS (
     SELECT

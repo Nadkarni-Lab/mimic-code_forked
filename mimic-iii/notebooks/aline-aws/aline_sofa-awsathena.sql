@@ -95,7 +95,7 @@ with co as
         and le.ITEMID in (50800, 50816, 50821)
   ) pvt
   group by pvt.icustay_id, pvt.CHARTTIME
-  -- we only want rows with a PO2 measurement
+  -- we only want rows with a PO2 liftovermimiciv_measurement
   having max(case when label = 'PO2' then valuenum else null end) is not null
 )
 , stg_pafi as

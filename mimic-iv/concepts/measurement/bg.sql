@@ -2,7 +2,7 @@
 -- which were found in LABEVENTS
 WITH bg AS (
     SELECT
-        -- specimen_id only ever has 1 measurement for each itemid
+        -- specimen_id only ever has 1 liftovermimiciv_measurement for each itemid
         -- so, we may simply collapse rows using MAX()
         MAX(subject_id) AS subject_id
         , MAX(hadm_id) AS hadm_id
@@ -53,7 +53,7 @@ WITH bg AS (
         , MAX(CASE WHEN itemid = 50815 THEN valuenum ELSE NULL END) AS o2flow
         -- fix a common unit conversion error for fio2
         -- atmospheric o2 is 20.89%, so any value <= 20 is unphysiologic
-        -- usually this is a misplaced O2 flow measurement
+        -- usually this is a misplaced O2 flow liftovermimiciv_measurement
         , MAX(CASE WHEN itemid = 50816 THEN
                 CASE
                     WHEN valuenum > 20 AND valuenum <= 100 THEN valuenum

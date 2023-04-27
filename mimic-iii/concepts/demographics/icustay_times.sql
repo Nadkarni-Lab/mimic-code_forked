@@ -29,7 +29,7 @@ with h as
       end as data_end
     from h
 )
--- get first/last heart rate measurement during hospitalization for each ICUSTAY_ID
+-- get first/last heart rate liftovermimiciv_measurement during hospitalization for each ICUSTAY_ID
 , t1 as
 (
 select ce.icustay_id

@@ -1,7 +1,7 @@
 -- THIS SCRIPT IS AUTOMATICALLY GENERATED. DO NOT EDIT IT DIRECTLY.
 DROP TABLE IF EXISTS kdigo_stages; CREATE TABLE kdigo_stages AS
 -- This query checks if the patient had AKI according to KDIGO.
--- AKI is calculated every time a creatinine or urine output measurement occurs.
+-- AKI is calculated every time a creatinine or urine output liftovermimiciv_measurement occurs.
 -- Baseline creatinine is defined as the lowest creatinine in the past 7 days.
 
 -- get creatinine stages

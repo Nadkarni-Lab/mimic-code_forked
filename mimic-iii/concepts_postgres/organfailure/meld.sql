@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS meld; CREATE TABLE meld AS
 -- TODO needed in this code:
 --  1. identify 2x dialysis in the past week, or 24 hours of CVVH
 --      at the moment it just checks for any dialysis on the day
---  2. adjust the serum sodium using the corresponding glucose measurement
+--  2. adjust the serum sodium using the corresponding glucose liftovermimiciv_measurement
 --      Measured sodium + 0.024 * (Serum glucose - 100)   (Hiller, 1999)
 
 with cohort as
