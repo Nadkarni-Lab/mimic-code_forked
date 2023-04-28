@@ -185,8 +185,8 @@ SELECT
     , ie.icustay_id
     , pr.drug AS antibiotic
     , pr.route
-    , pr.startdate
-    , pr.enddate
+    , pr.startdate as starttime
+    , pr.enddate as stoptime
 FROM `physionet-data.mimiciii_clinical.prescriptions` pr
 -- inner join to subselect to only antibiotic prescriptions
 INNER JOIN abx
@@ -197,7 +197,7 @@ INNER JOIN abx
 -- add in icustay_id as we use this table for sepsis-3
 LEFT JOIN `physionet-data.mimiciii_clinical.icustays` ie
     ON pr.hadm_id = ie.hadm_id
-        AND pr.startdate >= ie.intime
-        AND pr.enddate < ie.outtime
+        AND starttime >= ie.intime
+        AND starttime < ie.outtime
 WHERE abx.antibiotic = 1
 ;
