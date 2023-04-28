@@ -5,7 +5,7 @@ WITH blood_diff AS (
         MAX(subject_id) AS subject_id
         , MAX(hadm_id) AS hadm_id
         , MAX(charttime) AS charttime
-        , le.specimen_id
+        , hadm_id AS specimen_id
 
         -- create one set of columns for percentages, one set for counts
         -- we harmonize all count units into K/uL == 10^9/L
@@ -143,7 +143,7 @@ WITH blood_diff AS (
         AND valuenum IS NOT NULL
         -- differential values cannot be negative
         AND valuenum >= 0
-    GROUP BY le.specimen_id
+    GROUP BY specimen_id
 )
 
 SELECT

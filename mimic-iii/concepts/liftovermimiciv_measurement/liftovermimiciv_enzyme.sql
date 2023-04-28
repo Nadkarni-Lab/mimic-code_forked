@@ -3,7 +3,7 @@ SELECT
     MAX(subject_id) AS subject_id
     , MAX(hadm_id) AS hadm_id
     , MAX(charttime) AS charttime
-    , le.specimen_id
+    , hadm_id AS specimen_id
     -- convert from itemid into a meaningful column
     , MAX(CASE WHEN itemid = 50861 THEN valuenum ELSE NULL END) AS alt
     , MAX(CASE WHEN itemid = 50863 THEN valuenum ELSE NULL END) AS alp
@@ -40,5 +40,5 @@ WHERE le.itemid IN
     AND valuenum IS NOT NULL
     -- lab values cannot be 0 and cannot be negative
     AND valuenum > 0
-GROUP BY le.specimen_id
+GROUP BY specimen_id
 ;

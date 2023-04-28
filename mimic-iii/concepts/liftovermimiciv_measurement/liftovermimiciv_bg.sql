@@ -9,8 +9,9 @@ WITH bg AS (
         , MAX(charttime) AS charttime
         -- specimen_id *may* have different storetimes, so this
         -- is taking the latest
-        , MAX(storetime) AS storetime
-        , le.specimen_id
+         ---- there is no storetime in labevents mimic3 so using charttime as storetime for compatibility.
+        , MAX(charttime) AS storetime
+        , hadm_id AS specimen_id
         , MAX(CASE WHEN itemid = 52033 THEN value ELSE NULL END) AS specimen
         , MAX(CASE WHEN itemid = 50801 THEN valuenum ELSE NULL END) AS aado2
         , MAX(
@@ -112,7 +113,7 @@ WITH bg AS (
             -- , 52411 -- sodium, WB NA +
             , 50825 -- temperature
         )
-    GROUP BY le.specimen_id
+    GROUP BY specimen_id
 )
 
 , stg_spo2 AS (
