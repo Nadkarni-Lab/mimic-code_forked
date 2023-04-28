@@ -1,5 +1,6 @@
 -- This query extracts dose+durations of norepinephrine administration
 -- Local hospital dosage guidance: 0.03 mcg/kg/min (low), 0.5 mcg/kg/min (high)
+-- KEPT THIS THE SAME since norepinephrine has slightly more complex logic and patientweight doesnt exist in inputevents_cv.
 SELECT
     icustay_id, linkorderid
     -- two rows in mg/kg/min... rest in mcg/kg/min
