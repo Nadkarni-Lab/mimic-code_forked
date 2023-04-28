@@ -28,7 +28,7 @@ WITH tm AS (
     FROM tm
     INNER JOIN `physionet-data.mimiciii_clinical.liftovermimiciv_urine_output` uo
         ON tm.icustay_id = uo.icustay_id
-    WINDOW w AS (PARTITION BY tm.stay_id ORDER BY charttime)
+    WINDOW w AS (PARTITION BY tm.icustay_id ORDER BY charttime)
 )
 
 , ur_stg AS (
