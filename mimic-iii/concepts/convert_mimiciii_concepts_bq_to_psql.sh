@@ -24,7 +24,7 @@ export REGEX_SECONDS="s/SECOND\)/\'SECOND\'\)/g"
 # tables we want to run before all other concepts
 # usually because they are used as dependencies
 #DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.icustay_hours .echo_data .code_status .rrt durations.weight_durations fluid_balance.urine_output organfailure.kdigo_uo'
-DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.liftovermimiciv_icustay_times demographics.icustay_hours demographics.liftovermimiciv_icustay_hourly .echo_data .code_status .rrt durations.weight_durations demographics.liftovermimiciv_weight_durations fluid_balance.urine_output fluid_balance.liftovermimiciv_urine_output organfailure.kdigo_uo'
+DIR_AND_TABLES_TO_PREBUILD='demographics.icustay_times demographics.liftovermimiciv_icustay_times demographics.icustay_hours demographics.liftovermimiciv_icustay_hourly .echo_data .code_status .rrt durations.weight_durations demographics.liftovermimiciv_weight_durations fluid_balance.urine_output fluid_balance.liftovermimiciv_urine_output organfailure.kdigo_uo liftovermimiciv_medication.liftovermimiciv_antibiotic liftovermimiciv_medication.liftovermimiciv_epinephrine liftovermimiciv_medication.liftovermimiciv_norepinephrine liftovermimiciv_medication.liftovermimiciv_dopamine liftovermimiciv_medication.liftovermimiciv_dobutamine'
 
 # tables which are written directly in postgresql and source code controlled
 # this is usually because there is no trivial conversion between bq/psql syntax
