@@ -1,7 +1,7 @@
 WITH ce AS (
     SELECT
         ce.subject_id
-        , ce.stay_id
+        , ce.icustay_id
         , ce.charttime
         , itemid
         -- TO DO: clean
@@ -33,7 +33,7 @@ WITH ce AS (
         , storetime
     FROM `physionet-data.mimiciii_clinical.chartevents` ce
     WHERE ce.value IS NOT NULL
-        AND ce.stay_id IS NOT NULL
+        AND ce.icustay_id IS NOT NULL
         AND ce.itemid IN
         (
             224688 -- Respiratory Rate (Set)
@@ -53,7 +53,7 @@ WITH ce AS (
 
 SELECT
     subject_id
-    , MAX(stay_id) AS stay_id
+    , MAX(icustay_id) AS icustay_id
     , charttime
     , MAX(
         CASE WHEN itemid = 224688 THEN valuenum ELSE null END
