@@ -1,5 +1,6 @@
 #!/bin/bash
 # This shell script converts BigQuery .sql files into PostgreSQL .sql files.
+### modified by PJ April 2023
 
 # path in which we create the postgres concepts
 TARGET_PATH='../concepts_postgres'
