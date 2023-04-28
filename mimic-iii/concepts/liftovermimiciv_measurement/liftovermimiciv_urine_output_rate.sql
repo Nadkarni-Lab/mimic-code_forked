@@ -7,7 +7,7 @@ WITH tm AS (
            , MIN(charttime) AS intime_hr
            , MAX(charttime) AS outtime_hr
     FROM `physionet-data.mimiciii_clinical.icustays` ie
-    INNER JOIN `physionet-data.mimiciii_clinical.chartevents` ce
+    INNER JOIN `physionet-data.mimiciii_clinical.chartevents` AS ce
         ON ie.icustay_id = ce.icustay_id
             AND ce.itemid = 220045
             AND ce.charttime > DATETIME_SUB(ie.intime, INTERVAL '1' MONTH)
