@@ -13,5 +13,5 @@ SELECT
     , amount AS vaso_amount
     , starttime
     , endtime
-FROM `physionet-data.mimiciii_clinical.inputevents`
+FROM `physionet-data.mimiciii_clinical.inputevents_mv`
 WHERE itemid = 221906 -- norepinephrine

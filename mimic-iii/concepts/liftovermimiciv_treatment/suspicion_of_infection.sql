@@ -7,7 +7,7 @@ with abx as
   , pr.enddate as antibiotic_endtime
   from `physionet-data.mimiciii_clinical.prescriptions` pr
   -- inner join to subselect to only antibiotic prescriptions
-  inner join `abx_prescriptions_list` ab
+  inner join `physionet-data.mimiciii_clinical.abx_prescriptions_list` ab
       on pr.drug = ab.drug
 )
 -- get cultures for each icustay

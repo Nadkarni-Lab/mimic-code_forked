@@ -103,7 +103,7 @@ WITH co AS (
     SELECT co.icustay_id, co.hr
         , MAX(chem.creatinine) AS creatinine_max
     FROM co
-    LEFT JOIN `physionet-data.mimiciii_clinical.liftoermimiciv_chemistry` chem
+    LEFT JOIN `physionet-data.mimiciii_clinical.liftovermimiciv_chemistry` chem
         ON co.hadm_id = chem.hadm_id
             AND co.starttime < chem.charttime
             AND co.endtime >= chem.charttime
