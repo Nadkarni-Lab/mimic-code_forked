@@ -19,7 +19,7 @@ WITH ab_tbl AS (
 )
 
 , me AS (
-    SELECT micro_specimen_id
+    SELECT test_itemid AS micro_specimen_id
         -- the following columns are identical for all rows
         -- of the same micro_specimen_id
         -- these aggregates simply collapse duplicates down to 1 row
